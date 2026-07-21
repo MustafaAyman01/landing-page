@@ -44,16 +44,23 @@
   .btn-brass:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(169,116,62,.42)}
   .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--border2)}
 
-  .hero{background:linear-gradient(160deg,var(--indigo) 0%,var(--indigo-deep) 100%);color:#fff;padding:96px 0 110px;position:relative;overflow:hidden;text-align:center}
+  .hero{background:linear-gradient(160deg,var(--indigo) 0%,var(--indigo-deep) 100%);color:#fff;padding:88px 0 100px;position:relative;overflow:hidden}
   .hero::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg, rgba(255,255,255,.035) 0 2px, transparent 2px 64px);pointer-events:none}
   .hero .wrap{position:relative}
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.06em;color:var(--brass-tint);background:rgba(169,116,62,.18);border:1px dashed rgba(243,232,216,.4);padding:6px 14px;border-radius:999px;margin-bottom:24px}
-  .hero h1{font-size:clamp(28px,4.6vw,48px);font-weight:700;line-height:1.32;margin:0 auto 20px;max-width:760px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:52px;align-items:center}
+  .hero-copy{text-align:right}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.06em;color:var(--brass-tint);background:rgba(169,116,62,.18);border:1px dashed rgba(243,232,216,.4);padding:6px 14px;border-radius:999px;margin-bottom:22px}
+  .hero h1{font-size:clamp(28px,3.6vw,42px);font-weight:700;line-height:1.34;margin:0 0 18px}
   .hero h1 em{font-style:normal;color:var(--brass-tint)}
-  .hero p.lead{font-size:17px;color:rgba(255,255,255,.78);max-width:520px;margin:0 auto 34px}
-  .hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .hero p.lead{font-size:16.5px;color:rgba(255,255,255,.78);max-width:480px;margin:0 0 30px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
   .btn-light{background:#fff;color:var(--indigo-deep)}
   .btn-light:hover{transform:translateY(-1px)}
+  .hero-proof{display:flex;align-items:center;gap:8px;margin-top:26px;font-size:13px;color:rgba(255,255,255,.6)}
+  .hero-proof .dot{width:5px;height:5px;border-radius:50%;background:var(--brass-tint);flex-shrink:0}
+  .hero-visual .device{background:var(--surface)}
+  .hero-visual .placeholder-shot{aspect-ratio:4/3}
+  .hero-visual .real-shot{aspect-ratio:4/3}
 
   section{padding:88px 0}
   .section-head{max-width:640px;margin:0 auto 48px;text-align:center}
@@ -121,6 +128,12 @@
 
   @media (max-width:860px){
     nav{display:none}
+    .hero-grid{grid-template-columns:1fr}
+    .hero-copy{text-align:center}
+    .hero p.lead{margin:0 auto 30px}
+    .hero-ctas{justify-content:center}
+    .hero-proof{justify-content:center}
+    .hero-visual{max-width:440px;margin:0 auto}
     .systems-grid{grid-template-columns:1fr}
     .problem-grid{grid-template-columns:1fr}
     .feature-row, .feature-row.reverse{grid-template-columns:1fr;direction:rtl}
@@ -171,13 +184,27 @@
 </header>
 
 <section class="hero">
-  <div class="wrap">
-    <div class="eyebrow">⚡ حلول برمجية مصممة على المقاس</div>
-    <h1>نظام إدارة يتبني <em>على مقاس مصنعك</em><br>مش قالب جاهز بيتفصّل عليك بالغلط</h1>
-    <p class="lead">فواتير، مخزون، حسابات عملاء وموردين، تقارير — كل نظام بنعمله مبني على احتياج حقيقي لمصنع حقيقي.</p>
-    <div class="hero-ctas">
-      <a href="#systems" class="btn btn-light">شوف الأنظمة ↓</a>
-      <a href="https://wa.me/201505401778?text=عايز%20أعرف%20أكتر%20عن%20أنظمة%20Unifra" class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.35)">تواصل واتساب</a>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow">⚡ نظام إدارة مصمم لمصانع الملابس والتغليف</div>
+      <h1>مصنعك كله... في <em>شاشة واحدة</em></h1>
+      <p class="lead">من الفاتورة، للمخزون، لحساب العميل، للتقرير الشهري — نظام واحد بيوفّرلك وقتك ويقفل باب أي غلطة في حساب أو مخزون. من غير ورق، من غير إكسل معقد.</p>
+      <div class="hero-ctas">
+        <a href="https://wa.me/201505401778?text=عايز%20أحجز%20عرض%20تجريبي%20مجاني%20لنظام%20Unifra" class="btn btn-light">احجز عرض تجريبي مجاني</a>
+        <a href="#systems" class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.35)">شوف الأنظمة ↓</a>
+      </div>
+      <div class="hero-proof"><span class="dot"></span> نظام مبني على احتياج مصانع حقيقية — بياناتك محفوظة وآمنة على السحابة</div>
+    </div>
+    <div class="hero-visual">
+      <div class="device">
+        <div class="device-bar"><i></i><i></i><i></i></div>
+        <img src="assets/images/hero-dashboard.png" alt="لوحة تحكم النظام" class="real-shot" style="display:none" onload="this.style.display='block';this.nextElementSibling.style.display='none';" onerror="this.remove();">
+        <div class="placeholder-shot">
+          <div class="icon">🖥️</div>
+          <b>حط صورة اسمها hero-dashboard.png</b>
+          <small>جوه مجلد assets/images</small>
+        </div>
+      </div>
     </div>
   </div>
 </section>

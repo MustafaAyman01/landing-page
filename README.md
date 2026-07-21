@@ -8,6 +8,7 @@
 
 | المكان المطلوب رفعه فيه | اسم الملف المطلوب بالظبط |
 |---|---|
+| `assets/images/` | `hero-dashboard.png` (لوحة تحكم عامة، بتظهر أعلى الصفحة) |
 | `assets/images/` | `feature-invoices.png` |
 | `assets/images/` | `feature-statement.png` |
 | `assets/images/` | `feature-stocktake.png` |
